@@ -1,4 +1,4 @@
-screen -t editor vim -u INSTALL_PATH
+screen -t editor vim -u INSTALL_PATH/.vimrc
 split
 focus
 screen -t terminal bash
