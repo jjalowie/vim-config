@@ -17,11 +17,6 @@ wget https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai
 mkdir -p $INSTALL_PATH/.vim/colors
 mv -f monokai.vim $INSTALL_PATH/.vim/colors/monokai.vim
 
-if [ -e "~/.screenrc" ]; then
-  e=$(grep '^shell ' ~/.screenrc)
-  if [ e != "" ]; then
-    echo "shell -$SHELL" >> ~/.screenrc
-  fi
-else
-  echo "shell -$SHELL" >> ~/.screenrc
-fi >/dev/null
+wget -O .vimrc https://raw.githubusercontent.com/jjalowie/vim-config/main/.screenrc >/dev/null
+sed -i "s|INSTALL_PATH|$INSTALL_PATH|g" .screenrc
+mv -f .screenrc $INSTALL_PATH
