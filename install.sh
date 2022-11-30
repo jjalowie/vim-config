@@ -20,3 +20,11 @@ mv -f monokai.vim $INSTALL_PATH/.vim/colors/monokai.vim
 wget -O .vimrc https://raw.githubusercontent.com/jjalowie/vim-config/main/.screenrc >/dev/null
 sed -i "s|INSTALL_PATH|$INSTALL_PATH|g" .screenrc
 mv -f .screenrc $INSTALL_PATH
+
+
+echo "Exporting svim"
+function svim()
+{
+  screen -c $INSTALL_PATH/.screenrc $*
+}
+export -f svim
