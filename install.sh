@@ -25,6 +25,6 @@ mv -f .screenrc $INSTALL_PATH
 echo "Exporting svim"
 function svim()
 {
-  screen -c $INSTALL_PATH/.screenrc $*
+  screen -c `$INSTALL_PATH`/.screenrc $*
 }
 export -f svim
