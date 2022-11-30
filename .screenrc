@@ -1,0 +1,6 @@
+screen -t editor vim -u INSTALL_PATH
+split
+focus
+screen -t terminal bash
+resize -10
+focus
