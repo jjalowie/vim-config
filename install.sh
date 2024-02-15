@@ -17,7 +17,3 @@ mv -f .vimrc $INSTALL_PATH
 curl -O https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
 mkdir -p $INSTALL_PATH/.vim/colors
 mv -f monokai.vim $INSTALL_PATH/.vim/colors/monokai.vim
-
-curl -O https://raw.githubusercontent.com/jjalowie/vim-config/main/.screenrc
-sed -i "s|INSTALL_PATH|$INSTALL_PATH|g" .screenrc
-mv -f .screenrc $INSTALL_PATH
