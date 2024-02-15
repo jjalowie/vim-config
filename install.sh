@@ -10,7 +10,7 @@ set -x
 echo "Installing vim config to $INSTALL_PATH..."
 
 git clone https://github.com/gmarik/Vundle.vim.git $INSTALL_PATH/.vim/plugin/Vundle.vim
-curl -p .vimrc https://raw.githubusercontent.com/jjalowie/vim-config/main/.vimrc
+curl -O https://raw.githubusercontent.com/jjalowie/vim-config/main/.vimrc
 sed -i "s|INSTALL_PATH|$INSTALL_PATH|g" .vimrc
 mv -f .vimrc $INSTALL_PATH
 
