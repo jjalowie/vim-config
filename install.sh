@@ -5,6 +5,7 @@ INSTALL_PATH=`realpath $INSTALL_PATH`
 
 # fail on any error
 set -e
+set -x
 
 echo "Installing vim config to $INSTALL_PATH..."
 
