@@ -9,23 +9,15 @@ set -x
 
 echo "Installing vim config to $INSTALL_PATH..."
 
-git clone https://github.com/gmarik/Vundle.vim.git $INSTALL_PATH/.vim/plugin/Vundle.vim >/dev/null
-wget -O .vimrc https://raw.githubusercontent.com/jjalowie/vim-config/main/.vimrc >/dev/null
+git clone https://github.com/gmarik/Vundle.vim.git $INSTALL_PATH/.vim/plugin/Vundle.vim
+curl -p .vimrc https://raw.githubusercontent.com/jjalowie/vim-config/main/.vimrc
 sed -i "s|INSTALL_PATH|$INSTALL_PATH|g" .vimrc
 mv -f .vimrc $INSTALL_PATH
 
-wget https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim >/dev/null
+curl -O https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
 mkdir -p $INSTALL_PATH/.vim/colors
 mv -f monokai.vim $INSTALL_PATH/.vim/colors/monokai.vim
 
-wget -O .screenrc https://raw.githubusercontent.com/jjalowie/vim-config/main/.screenrc >/dev/null
+curl -O https://raw.githubusercontent.com/jjalowie/vim-config/main/.screenrc
 sed -i "s|INSTALL_PATH|$INSTALL_PATH|g" .screenrc
 mv -f .screenrc $INSTALL_PATH
-
-
-echo "Exporting svim"
-function svim()
-{
-  screen -c `$INSTALL_PATH`/.screenrc $*
-}
-export -f svim
